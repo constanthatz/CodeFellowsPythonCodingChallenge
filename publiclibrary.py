@@ -28,6 +28,9 @@ class Library(object):
     def shelf(self, shelf):
         self._shelves.append(shelf)
 
+    def unshelved_pile(self, book):
+        self._unshelved.append(book)
+
 
 class Shelf(object):
     def __init__(self, name):
@@ -56,6 +59,8 @@ class Shelf(object):
 class Book(object):
     def __init__(self, name):
         self._name = name
+        self._shelf = 'Unshelved'
+        self._library = 'None'
 
     @property
     def name(self):
@@ -70,4 +75,5 @@ class Book(object):
 
     def unshelf(self, shelf):
         shelf.book_remove(self)
+
 
