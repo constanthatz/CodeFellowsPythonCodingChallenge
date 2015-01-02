@@ -35,6 +35,7 @@ class Library(object):
 class Shelf(object):
     def __init__(self, name):
         self._name = name
+        self._library = 'None'
         self._books = []
 
     @property
@@ -44,6 +45,14 @@ class Shelf(object):
     @name.setter
     def name(self, value):
         self._name = value
+
+    @property
+    def library(self):
+        return self._library
+
+    @library.setter
+    def library(self, value):
+        self._library = value
 
     @property
     def books(self):
@@ -95,4 +104,3 @@ class Book(object):
     def unshelf(self):
         shelf.book_remove(self)
         self._shelf = 'Unshelved'
-
