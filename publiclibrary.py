@@ -20,7 +20,7 @@ class Library(object):
     def shelves(self):
         return self._shelves
 
-    def shelf_add(self, shelf):
+    def shelf(self, shelf):
         self._shelves.append(shelf)
 
 
