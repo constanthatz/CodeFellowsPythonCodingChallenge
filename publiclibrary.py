@@ -80,6 +80,14 @@ class Book(object):
     def shelf(self, value):
         self._shelf = value
 
+    @property
+    def library(self):
+        return self._library
+
+    @library.setter
+    def library(self, value):
+        self._library = value
+
     def enshelf(self, shelf):
         shelf.book(self)
         self._shelf = shelf.name
@@ -87,5 +95,4 @@ class Book(object):
     def unshelf(self):
         shelf.book_remove(self)
         self._shelf = 'Unshelved'
-
 
