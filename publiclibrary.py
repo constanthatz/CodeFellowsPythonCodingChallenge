@@ -8,7 +8,16 @@ class Library(object):
 
 
 class Shelf(object):
-    pass
+    def __init__(self, name):
+        self._name = name
+
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, value):
+        self._name = value
 
 
 class Book(object):
@@ -22,4 +31,3 @@ class Book(object):
     @name.setter
     def name(self, value):
         self._name = value
-
