@@ -51,9 +51,11 @@ class Shelf(object):
 
     def book(self, book):
         self._books.append(book)
+        book.shelf = self._name
 
     def book_remove(self, book):
         self._books.remove(book)
+        book.shelf = 'Unshelved'
 
 
 class Book(object):
