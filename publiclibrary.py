@@ -27,6 +27,7 @@ class Library(object):
 class Shelf(object):
     def __init__(self, name):
         self._name = name
+        self._books = []
 
     @property
     def name(self):
@@ -35,6 +36,13 @@ class Shelf(object):
     @name.setter
     def name(self, value):
         self._name = value
+
+    @property
+    def books(self):
+        return self._books
+
+    def book(self, book):
+        self._books.append(book)
 
 
 class Book(object):
