@@ -70,10 +70,20 @@ class Book(object):
     def name(self, value):
         self._name = value
 
+    @property
+    def shelf(self):
+        return self._shelf
+
+    @shelf.setter
+    def shelf(self, value):
+        self._shelf = value
+
     def enshelf(self, shelf):
         shelf.book(self)
+        self._shelf = shelf.name
 
-    def unshelf(self, shelf):
+    def unshelf(self):
         shelf.book_remove(self)
+        self._shelf = 'Unshelved'
 
 
