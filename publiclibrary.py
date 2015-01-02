@@ -100,7 +100,7 @@ class Book(object):
         self._library = value
 
     def enshelf(self, shelf):
-        shelf.book(self)
+        shelf.book_add(self)
         self._shelf = shelf
 
     def unshelf(self):
