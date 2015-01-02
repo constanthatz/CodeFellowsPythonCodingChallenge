@@ -22,10 +22,10 @@ class Library(object):
         return self._shelves
 
     @property
-    def unhelved(self):
+    def unshelved(self):
         return self._unshelved
 
-    def shelf(self, shelf):
+    def shelf_add(self, shelf):
         self._shelves.append(shelf)
 
     def unshelved_pile(self, book):
@@ -49,7 +49,7 @@ class Shelf(object):
     def books(self):
         return self._books
 
-    def book(self, book):
+    def book_add(self, book):
         self._books.append(book)
         book.shelf = self._name
 
