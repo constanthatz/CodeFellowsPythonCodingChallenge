@@ -6,6 +6,7 @@ from __future__ import unicode_literals
 class Library(object):
     def __init__(self, name):
         self._name = name
+        self._shelves = []
 
     @property
     def name(self):
@@ -14,6 +15,13 @@ class Library(object):
     @name.setter
     def name(self, value):
         self._name = value
+
+    @property
+    def shelves(self):
+        return self._shelves
+
+    def shelf_add(self, shelf):
+        self._shelves.append(shelf)
 
 
 class Shelf(object):
