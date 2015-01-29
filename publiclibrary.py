@@ -5,16 +5,21 @@ from __future__ import unicode_literals
 
 class Library(object):
     def __init__(self, name):
+        '''Initialize library with a name, a list of shelves including
+            a special Unshelved shelf'''
         self._name = name
         self._shelves = []
-        self._unshelved = []
+        self._unshelved = Shelf('Unshelved')
+        self.shelf_add(self._unshelved)
 
     @property
     def name(self):
+        '''Name getter.'''
         return self._name
 
     @name.setter
     def name(self, value):
+        '''Name setter.'''
         self._name = value
 
     @property
@@ -30,7 +35,7 @@ class Library(object):
         shelf.library = self
 
     def unshelved_pile(self, book):
-        self._unshelved.append(book)
+        self._unshelved._books.append(book)
 
 
 class Shelf(object):
@@ -105,5 +110,5 @@ class Book(object):
 
     def unshelf(self):
         self._shelf.book_remove(self)
-        self._shelf = None
+        self._shelf = self._library._unshelved
         self._library.unshelved_pile(self)
